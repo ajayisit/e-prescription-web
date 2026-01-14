@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Prescription (Single Doctor)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-4">
+
+<h3 class="mb-3">E-Prescription Generator</h3>
+
+<form method="POST">
+    <div class="row">
+        <div class="col-md-4">
+            <input class="form-control mb-2" name="patient_name" placeholder="Patient Name" required>
+        </div>
+        <div class="col-md-2">
+            <input class="form-control mb-2" name="age" placeholder="Age" required>
+        </div>
+        <div class="col-md-3">
+            <select class="form-control mb-2" name="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+    </div>
+
+    <textarea class="form-control mb-2" name="diagnosis" placeholder="Diagnosis"></textarea>
+
+    <textarea class="form-control mb-3" name="medicines" rows="6"
+        placeholder="Medicine Name – Dose – Frequency – Duration
+Example:
+Tab Paracetamol 500mg – 1-0-1 – 3 Days
+Cap Amoxicillin 250mg – 1-1-1 – 5 Days"></textarea>
+
+    <button class="btn btn-primary">Generate Prescription PDF</button>
+<p class="mt-2 text-muted">
+After download, you can share PDF via WhatsApp manually.
+</p>
+</form>
+
+</body>
+</html>
