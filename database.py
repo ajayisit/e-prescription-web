@@ -12,8 +12,14 @@ CREATE TABLE IF NOT EXISTS prescriptions (
     diagnosis TEXT,
     medicines TEXT,
     date TEXT
+    pdf_file TEXT
 )
 """)
+try:
+    c.execute("ALTER TABLE prescriptions ADD COLUMN pdf_file TEXT")
+    print("pdf_file column added successfully")
+except sqlite3.OperationalError:
+    print("pdf_file column already exists")
 
 conn.commit()
 conn.close()
